@@ -1,10 +1,13 @@
 {
   "name": "knowledge-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "关系图谱",
-  "main": "./lib/business_components_v2.umd.min.js",
+  "main": "./lib/relation-v1.umd.min.js",
   "scripts": {
     "dev": "vue-cli-service serve --open --watch",
+    "build": "yarn build:clean && yarn build:lib && rimraf lib/demo.html",
+    "build:clean": "rimraf lib",
+    "build:lib": "vue-cli-service build --name relation-v1 --target lib --dest lib ./packages/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
